@@ -1220,6 +1220,12 @@ body.dark-mode .header.scrolled{
 
 .team-card{
 
+    width:100%;
+
+    max-width:300px;
+
+    margin-inline:auto;
+
     text-align:center;
 
     transition:var(--transition);
@@ -1272,11 +1278,19 @@ body.dark-mode .header.scrolled{
 
     margin-bottom:.6rem;
 
+    line-height:1.25;
+
+    word-break:break-word;
+
 }
 
 .team-card span{
 
+    display:block;
+
     color:var(--color-text-light);
+
+    line-height:1.5;
 
 }
 /*==================================================
@@ -1287,7 +1301,7 @@ body.dark-mode .header.scrolled{
 
     display:grid;
 
-    grid-template-columns:repeat(2, minmax(260px, 320px));
+    grid-template-columns:repeat(2, minmax(240px, 300px));
 
     justify-content:center;
 
@@ -2034,6 +2048,13 @@ body,
     width:170px;
 
     }
+    .team__toggle{
+
+    width:100%;
+
+    max-width:300px;
+
+    }
 
     .team__featured{
 
@@ -2048,6 +2069,14 @@ body,
     .team__more{
 
     grid-template-columns:1fr;
+
+    }
+
+    .team-card__image{
+
+    width:190px;
+
+    height:190px;
 
     }
 
