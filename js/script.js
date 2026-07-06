@@ -4,6 +4,7 @@
 
 const body = document.body;
 const loader = document.querySelector(".loader");
+const loaderText = document.querySelector(".loader__text");
 
 const header = document.querySelector(".header");
 
@@ -29,11 +30,19 @@ const contactForm = document.querySelector(".contact__form");
 
 window.addEventListener("load", () => {
 
+    const loadingMessage =
+        sessionStorage.getItem("loaderText") ||
+        "Preparing your experience...";
+
+    loaderText.textContent = loadingMessage;
+
     setTimeout(() => {
 
         loader.style.opacity = "0";
         loader.style.visibility = "hidden";
         loader.style.pointerEvents = "none";
+
+        sessionStorage.removeItem("loaderText");
 
     }, 1200);
 
