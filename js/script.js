@@ -32,7 +32,7 @@ window.addEventListener("load", () => {
 
     const loadingMessage =
         sessionStorage.getItem("loaderText") ||
-        "Preparing your experience...";
+        "Preparing your reading experience...";
 
     loaderText.textContent = loadingMessage;
 
