@@ -36,7 +36,7 @@ const teamMembers = [
     },
     {
         name: "Nehir Neva KARAARSLAN",
-        role: "Writer & PR",
+        role: "Writer & PR Member",
         image: "assets/team/nehirneva.jpg"
     },
     {
@@ -46,7 +46,7 @@ const teamMembers = [
     },
     {
         name: "Nisa ZEYNEPLİ",
-        role: "Writer & PR",
+        role: "Writer & PR Member",
         image: "assets/team/nisa.jpg"
     },
     {
@@ -61,20 +61,20 @@ const teamMembers = [
     },
     {
         name: "Bade KIZILGÜN",
-        role: "Writer",
+        role: "Writer & PR Team Leader",
         image: "assets/team/bade.jpg"
     },
 
     {
         name: "İpek ÖZBUDAK",
-        role: "Writer & Designer & PR",
+        role: "Writer & Designer & PR Member",
         image: "assets/team/ipekozbudak.jpg"
     },
 
     
     {
         name: "Osman Kemal HAZIR",
-        role: "Designer",
+        role: "Design Team Leader",
         image: "assets/team/osmankemal.jpg"
     },
     {
@@ -90,58 +90,63 @@ const teamMembers = [
     
 
     {
+        name: "Fatma Aysima ARISÖZ",
+        role: "PR Team Leader",
+        image: "assets/team/fatmaaysima.jpg"
+    },
+    {
         name: "İdil DOĞANYİĞİT",
-        role: "PR",
+        role: "PR Member",
         image: "assets/team/idil.jpg"
     },
     {
         name: "Talya ADALI",
-        role: "PR",
+        role: "PR Member",
         image: "assets/team/talyaadali.jpg"
     },
     {
         name: "Aliyesu ÜRKEN",
-        role: "PR",
+        role: "PR Member",
         image: "assets/team/aliyesuurken.jpg"
     },
     {
         name: "Deniz Çınar ÖZER",
-        role: "PR",
+        role: "PR Member",
         image: "assets/team/denizcinarozer.jpg"
     },
     {
         name: "Aral AZİZOĞLU",
-        role: "PR",
+        role: "PR Member",
         image: "assets/team/aralazizoglu.jpg"
     },
     {
         name: "Çınar YARIMCA",
-        role: "PR",
+        role: "PR Member",
         image: "assets/team/cinaryarimca.jpg"
     },
     {
         name: "Poyraz CÖMERT",
-        role: "PR",
+        role: "PR Member",
         image: "assets/team/poyrazcomert.jpg"
     },
     {
         name: "Ceylin YILDIZ",
-        role: "PR",
+        role: "PR Member",
         image: "assets/team/ceylinyildiz.jpg"
     },
     {
         name: "Elif Sayra ÇENGEL",
-        role: "PR",
+        role: "PR Member",
         image: "assets/team/elifsayracengel.jpg"
     },
     {
         name: "Derya Cemre Çetin",
-        role: "PR",
+        role: "PR Member",
         image: "assets/team/deryacemrecetin.jpg"
     },
     {
         name: "Belinay KOVAR",
-        role: "PR",
+        role: "PR Member",
         image: "assets/team/belinaykovar.jpg"
     }
 ];
