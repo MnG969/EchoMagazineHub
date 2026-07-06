@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EchoMagazine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="top-bar">
+    <button onclick="prevPage()">◀</button>
+    <button onclick="nextPage()">▶</button>
+    <button onclick="zoomIn()">🔍+</button>
+    <button onclick="zoomOut()">🔍-</button>
+  </div>
+
+  <div id="book-wrapper">
+    <div id="book">
+      <div class="page" data-density="hard">
+        <img src="./pages/1.jpg" onerror="console.error('1.jpg yüklenemedi:', this.src)">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
