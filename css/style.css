@@ -403,7 +403,23 @@ p{
     margin-bottom:2rem;
 
 }
+.loader__text{
 
+    margin:0 0 2rem;
+
+    font-size:.95rem;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:var(--color-text-light);
+
+    min-height:20px;
+
+    opacity:.85;
+
+}
 .loader__line{
 
     width:220px;
