@@ -1905,6 +1905,25 @@ body,
         grid-template-columns:1fr;
 
     }
+    .loader__logo{
+
+    font-size:3rem;
+
+    }
+
+    .loader__text{
+
+    font-size:.8rem;
+
+    letter-spacing:.08em;
+
+    }
+
+    .loader__line{
+
+    width:170px;
+
+    }
 
 }
 
