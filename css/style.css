@@ -1280,6 +1280,140 @@ body.dark-mode .header.scrolled{
 
 }
 /*==================================================
+=              DYNAMIC TEAM
+==================================================*/
+
+.team__featured{
+
+    display:grid;
+
+    grid-template-columns:repeat(2, minmax(260px, 320px));
+
+    justify-content:center;
+
+    gap:2rem;
+
+    margin-top:4rem;
+
+    margin-bottom:2.5rem;
+
+}
+
+.team__actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:2rem;
+
+}
+
+.team__toggle{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:.6rem;
+
+    padding:1rem 2rem;
+
+    border:1px solid rgba(0,0,0,.08);
+
+    border-radius:999px;
+
+    background:var(--color-surface);
+
+    color:var(--color-text);
+
+    font:inherit;
+
+    cursor:pointer;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.team__toggle:hover{
+
+    color:var(--color-primary);
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.team__toggle i{
+
+    font-size:1.2rem;
+
+    transition:.45s ease;
+
+}
+
+.team__toggle.active i{
+
+    transform:rotate(180deg);
+
+}
+
+.team__more{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:2rem;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    transition:
+        max-height .8s ease,
+        opacity .45s ease,
+        margin-top .45s ease;
+
+}
+
+.team__more.show{
+
+    max-height:5000px;
+
+    opacity:1;
+
+    margin-top:2rem;
+
+}
+
+.team__more .team-card{
+
+    opacity:0;
+
+    transform:translateY(35px);
+
+    transition:
+        opacity .45s ease,
+        transform .45s ease;
+
+}
+
+.team__more.show .team-card{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/*==================================================
 =                 NEWSLETTER
 ==================================================*/
 

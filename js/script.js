@@ -527,5 +527,95 @@ if (readMagazine) {
 
 }
 /*==================================================
+=               DYNAMIC TEAM
+==================================================*/
+
+const featuredContainer = document.getElementById("featured-team");
+const teamContainer = document.getElementById("team-more");
+const teamToggle = document.getElementById("team-toggle");
+
+if (featuredContainer && teamContainer && teamToggle) {
+
+    function createTeamCard(member) {
+
+        return `
+            <article class="team-card">
+
+                <figure class="team-card__image">
+
+                    <img
+                        src="${member.image}"
+                        alt="${member.name}">
+
+                </figure>
+
+                <h3>
+
+                    ${member.name}
+
+                </h3>
+
+                <span>
+
+                    ${member.role}
+
+                </span>
+
+            </article>
+        `;
+
+    }
+
+    const featuredMembers = teamMembers.filter(member => member.featured);
+
+    const otherMembers = teamMembers.filter(member => !member.featured);
+
+    featuredContainer.innerHTML =
+        featuredMembers.map(createTeamCard).join("");
+
+    teamContainer.innerHTML =
+        otherMembers.map(createTeamCard).join("");
+
+    let opened = false;
+
+    teamToggle.addEventListener("click", () => {
+
+        opened = !opened;
+
+        teamContainer.classList.toggle("show");
+
+        teamToggle.classList.toggle("active");
+
+        if (opened) {
+
+            teamToggle.innerHTML = `
+                Hide Team
+                <i class="ri-arrow-down-s-line"></i>
+            `;
+
+            const cards = teamContainer.querySelectorAll(".team-card");
+
+            cards.forEach((card, index) => {
+
+                card.style.transitionDelay =
+                    `${index * 0.05}s`;
+
+            });
+
+        }
+
+        else {
+
+            teamToggle.innerHTML = `
+                Explore Our Team
+                <i class="ri-arrow-down-s-line"></i>
+            `;
+
+        }
+
+    });
+
+}
+/*==================================================
 =               END OF FILE
 ==================================================*/
