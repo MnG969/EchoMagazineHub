@@ -67,7 +67,7 @@ const teamMembers = [
 
     {
         name: "İpek ÖZBUDAK",
-        role: "Writer & Designer & PR Member",
+        role: "Writer & Designer & PR Member & Media Manager",
         image: "assets/team/ipekozbudak.jpg"
     },
 
