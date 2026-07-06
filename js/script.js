@@ -506,5 +506,35 @@ console.log(
 );
 
 /*==================================================
+=         READ MAGAZINE TRANSITION
+==================================================*/
+
+const readMagazine = document.getElementById("read-magazine");
+
+if (readMagazine) {
+
+    readMagazine.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        sessionStorage.setItem(
+            "loaderText",
+            "Opening Issue 01..."
+        );
+
+        loader.style.opacity = "1";
+        loader.style.visibility = "visible";
+        loader.style.pointerEvents = "all";
+
+        setTimeout(() => {
+
+            window.location.href = readMagazine.href;
+
+        }, 1000);
+
+    });
+
+}
+/*==================================================
 =               END OF FILE
 ==================================================*/
