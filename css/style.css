@@ -2035,6 +2035,22 @@ body,
 
     }
 
+    .team__featured{
+
+    grid-template-columns:1fr;
+
+    justify-items:center;
+
+    gap:2rem;
+
+    }
+
+    .team__more{
+
+    grid-template-columns:1fr;
+
+    }
+
 }
 
 @media (max-width:576px){
