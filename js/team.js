@@ -87,7 +87,11 @@ const teamMembers = [
         role: "Designer",
         image: "assets/team/ardafurkan.jpg"
     },
-    
+    {
+        name: "Elif Asya AKPINAR",
+        role: "Designer",
+        image: "assets/team/elifasyaakpinar.jpg"
+    },
 
     {
         name: "Fatma Aysima ARISÖZ",

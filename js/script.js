@@ -237,30 +237,58 @@ document.querySelectorAll(
 });
 
 /*==================================================
-=           NEWSLETTER FORM
+=           NEWSLETTER (BREVO)
 ==================================================*/
 
-newsletterForm.addEventListener(
-"submit",
-
-(event)=>{
+newsletterForm.addEventListener("submit", async (event) => {
 
     event.preventDefault();
 
-    const email =
-    newsletterForm.querySelector("input");
+    const emailInput = document.getElementById("newsletter-email");
+    const message = document.getElementById("newsletter-message");
 
-    if(email.value.trim()===""){
+    message.textContent = "";
+    message.className = "newsletter__message";
 
-        alert("Please enter your email.");
+    try {
 
-        return;
+        const response = await fetch(
+            "https://echo-magazine-api.echomagazine.workers.dev/newsletter",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: emailInput.value.trim()
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if (data.success) {
+
+            message.textContent = "✓ Successfully subscribed to Echo Magazine.";
+            message.classList.add("success");
+
+            newsletterForm.reset();
+
+        } else {
+
+            message.textContent = data.message || "This email is already subscribed.";
+            message.classList.add("error");
+
+        }
+
+    } catch (error) {
+
+        message.textContent = "Connection error. Please try again.";
+        message.classList.add("error");
+
+        console.error(error);
 
     }
-
-    alert("Thank you for subscribing!");
-
-    newsletterForm.reset();
 
 });
 

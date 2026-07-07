@@ -1498,7 +1498,33 @@ body.dark-mode .header.scrolled{
     border-color:var(--color-primary);
 
 }
+.newsletter__message{
 
+    margin-top:1.5rem;
+
+    min-height:24px;
+
+    font-size:.95rem;
+
+    color:var(--color-primary);
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.newsletter__message.success{
+
+    color:#2e8b57;
+
+}
+
+.newsletter__message.error{
+
+    color:#c0392b;
+
+}
 /*==================================================
 =                 CONTACT
 ==================================================*/
