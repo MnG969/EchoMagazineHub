@@ -1,29 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EchoMagazine</title>
-  <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Echo Magazine | Issue 01</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
+
 </head>
+
 <body>
 
-  <div class="top-bar">
-    <button onclick="prevPage()">◀</button>
-    <button onclick="nextPage()">▶</button>
-    <button onclick="zoomIn()">🔍+</button>
-    <button onclick="zoomOut()">🔍-</button>
-  </div>
+    <header class="top-bar">
 
-  <div id="book-wrapper">
-    <div id="book">
-      <div class="page" data-density="hard">
-        <img src="./pages/1.jpg" onerror="console.error('1.jpg yüklenemedi:', this.src)">
-      </div>
+        <a href="../../index.html" class="back-btn">
+
+            <i class="ri-arrow-left-line"></i>
+
+            <span>Back to Hub</span>
+
+        </a>
+
+        <div class="brand">
+
+            <h1>Echo Magazine</h1>
+
+            <span>Issue 01</span>
+
+        </div>
+
+        <div class="reader-tools">
+
+            <div id="page-number">
+
+                1 / 25
+
+            </div>
+
+            <button onclick="zoomOut()">
+
+                <i class="ri-subtract-line"></i>
+
+            </button>
+
+            <button onclick="zoomIn()">
+
+                <i class="ri-add-line"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <div id="book-wrapper">
+
+        <div id="book">
+
+            <div class="page" data-density="hard">
+
+                <img src="./pages/1.jpg">
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
 
-  <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
-  <script src="script.js"></script>
+    <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>

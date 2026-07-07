@@ -1,58 +1,293 @@
-* {
-  box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  background: #1a1a1a;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  height: 100vh;
+:root{
+
+    --bg:#F8F3E6;
+    --surface:rgba(255,255,255,.72);
+    --gold:#C9A96E;
+    --text:#1F1F1F;
+    --shadow:0 15px 40px rgba(0,0,0,.08);
+
 }
 
-.top-bar {
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  background: #1a1a1a;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 60px;
-  align-items: center;
+body{
+
+    background:var(--bg);
+
+    font-family:Inter,sans-serif;
+
+    color:var(--text);
+
+    overflow:hidden;
+
+    height:100vh;
+
 }
 
-button {
-  padding: 10px;
-  margin: 5px;
-  font-size: 16px;
-  cursor: pointer;
+/*==================================
+=            TOP BAR
+==================================*/
+
+.top-bar{
+
+    position:fixed;
+
+    top:18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(95%,1250px);
+
+    height:78px;
+
+    padding:0 28px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:var(--surface);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
+
+    z-index:9999;
+
 }
 
-#book-wrapper {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform-origin: center center;
+/*==================================
+=           BACK BUTTON
+==================================*/
+
+.back-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.7rem;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    font-weight:600;
+
+    transition:.35s;
+
 }
 
-#book {
-  display: flex;
-  justify-content: center;
+.back-btn i{
+
+    font-size:1.25rem;
+
 }
 
-.page {
-  overflow: hidden;
-  background: #111;
+.back-btn:hover{
+
+    color:var(--gold);
+
+    transform:translateX(-4px);
+
 }
 
-.page img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+/*==================================
+=             BRAND
+==================================*/
+
+.brand{
+
+    text-align:center;
+
+}
+
+.brand h1{
+
+    font-family:Georgia,serif;
+
+    font-size:1.45rem;
+
+    font-weight:600;
+
+    letter-spacing:.03em;
+
+}
+
+.brand span{
+
+    display:block;
+
+    margin-top:2px;
+
+    font-size:.82rem;
+
+    letter-spacing:.16em;
+
+    color:#777;
+
+    text-transform:uppercase;
+
+}
+
+/*==================================
+=            TOOLS
+==================================*/
+
+.reader-tools{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+#page-number{
+
+    min-width:75px;
+
+    text-align:center;
+
+    font-weight:600;
+
+    color:#666;
+
+}
+
+.reader-tools button{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.reader-tools button:hover{
+
+    transform:translateY(-2px);
+
+    color:var(--gold);
+
+}
+
+/*==================================
+=             BOOK
+==================================*/
+
+#book-wrapper{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding-top:90px;
+
+    transform-origin:center;
+
+}
+
+#book{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.page{
+
+    overflow:hidden;
+
+    background:white;
+
+}
+
+.page img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+/*==================================
+=           MOBILE
+==================================*/
+
+@media(max-width:768px){
+
+    .top-bar{
+
+        height:auto;
+
+        padding:18px;
+
+        gap:16px;
+
+        flex-direction:column;
+
+    }
+
+    .brand h1{
+
+        font-size:1.15rem;
+
+    }
+
+    .reader-tools{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .back-btn{
+
+        align-self:flex-start;
+
+    }
+
+    #book-wrapper{
+
+        padding-top:150px;
+
+    }
+
 }
