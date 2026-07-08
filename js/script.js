@@ -293,46 +293,103 @@ newsletterForm.addEventListener("submit", async (event) => {
 });
 
 /*==================================================
-=             CONTACT FORM
+=             CONTACT FORM (BREVO)
 ==================================================*/
 
-contactForm.addEventListener(
-"submit",
-
-(event)=>{
+contactForm.addEventListener("submit", async (event) => {
 
     event.preventDefault();
 
-    const inputs =
-    contactForm.querySelectorAll(
+    const status = document.getElementById("contact-status");
 
-        "input[required], textarea"
+    const button = contactForm.querySelector("button");
 
-    );
+    status.textContent = "";
+    status.className = "contact__status";
 
-    let valid = true;
+    button.disabled = true;
 
-    inputs.forEach(input=>{
+    const originalText = button.innerHTML;
 
-        if(input.value.trim()===""){
+    button.innerHTML = `
+        Sending...
+        <i class="ri-loader-4-line ri-spin"></i>
+    `;
 
-            valid = false;
+    try{
+
+        const response = await fetch(
+
+            "https://echo-magazine-api.echomagazine.workers.dev/contact",
+
+            {
+
+                method:"POST",
+
+                headers:{
+
+                    "Content-Type":"application/json"
+
+                },
+
+                body:JSON.stringify({
+
+                    name:document.getElementById("contact-name").value,
+
+                    email:document.getElementById("contact-email").value,
+
+                    subject:document.getElementById("contact-subject").value,
+
+                    message:document.getElementById("contact-message").value
+
+                })
+
+            }
+
+        );
+
+        const data = await response.json();
+
+        if(data.success){
+
+            status.textContent =
+                "✓ Your message has been sent successfully!";
+
+            status.classList.add("success");
+
+            contactForm.reset();
 
         }
 
-    });
+        else{
 
-    if(!valid){
+            status.textContent =
+                data.message || "Unable to send your message.";
 
-        alert("Please complete all required fields.");
+            status.classList.add("error");
 
-        return;
+        }
 
     }
 
-    alert("Your message has been sent!");
+    catch(error){
 
-    contactForm.reset();
+        console.error(error);
+
+        status.textContent =
+            "Connection error. Please try again.";
+
+        status.classList.add("error");
+
+    }
+
+    finally{
+
+        button.disabled = false;
+
+        button.innerHTML = originalText;
+
+    }
 
 });
 /*==================================================

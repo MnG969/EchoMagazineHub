@@ -1573,6 +1573,8 @@ body.dark-mode .header.scrolled{
 
     border-color:var(--color-primary);
 
+    box-shadow:var(--shadow-md);
+
 }
 
 .contact-card i{
@@ -1635,7 +1637,38 @@ body.dark-mode .header.scrolled{
 .contact__form input:focus,
 .contact__form textarea:focus{
 
+    outline:none;
+
     border-color:var(--color-primary);
+
+    box-shadow:0 0 0 3px rgba(212,175,55,.15);
+
+}
+.contact__status{
+
+    min-height:24px;
+
+    margin-top:.5rem;
+
+    text-align:center;
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+    transition:var(--transition);
+
+}
+
+.contact__status.success{
+
+    color:#2e8b57;
+
+}
+
+.contact__status.error{
+
+    color:#c0392b;
 
 }
 
@@ -2103,6 +2136,19 @@ body,
     width:190px;
 
     height:190px;
+
+    }
+    .contact__grid{
+
+    grid-template-columns:1fr;
+
+    gap:3rem;
+
+    }
+
+.contact__row{
+
+    grid-template-columns:1fr;
 
     }
 
