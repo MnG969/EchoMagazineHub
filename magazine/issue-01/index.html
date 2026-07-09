@@ -39,25 +39,27 @@
 
         <div class="reader-tools">
 
-            <div id="page-number">
+    <button id="prev-page" class="nav-btn" onclick="prevPage()">
+        ← PREV
+    </button>
 
-                1 / 25
+    <span id="page-number">
+        1 / 29
+    </span>
 
-            </div>
+    <button id="next-page" class="nav-btn" onclick="nextPage()">
+        NEXT →
+    </button>
 
-            <button onclick="zoomOut()">
+    <button onclick="zoomOut()">
+        <i class="ri-subtract-line"></i>
+    </button>
 
-                <i class="ri-subtract-line"></i>
+    <button onclick="zoomIn()">
+        <i class="ri-add-line"></i>
+    </button>
 
-            </button>
-
-            <button onclick="zoomIn()">
-
-                <i class="ri-add-line"></i>
-
-            </button>
-
-        </div>
+</div>
 
     </header>
 

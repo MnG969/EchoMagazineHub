@@ -152,7 +152,38 @@ body{
 
     align-items:center;
 
-    gap:14px;
+    gap:12px;
+
+}
+.nav-btn{
+
+    border:none;
+
+    background:white;
+
+    height:42px;
+
+    padding:0 18px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    white-space:nowrap;
+
+}
+
+.nav-btn:hover{
+
+    transform:translateY(-2px);
+
+    color:var(--gold);
 
 }
 
@@ -272,9 +303,19 @@ body{
 
     .reader-tools{
 
-        width:100%;
+        flex-wrap:wrap;
 
         justify-content:center;
+
+        gap:10px;
+
+    }
+
+    .nav-btn{
+
+        padding:0 14px;
+
+        font-size:.85rem;
 
     }
 
