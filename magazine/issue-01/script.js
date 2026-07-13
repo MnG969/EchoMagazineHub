@@ -4,7 +4,7 @@ const wrapper = document.getElementById("book-wrapper");
 const book = document.getElementById("book");
 const pageNumber = document.getElementById("page-number");
 
-const TOTAL_PAGES = 29;
+const TOTAL_PAGES = 30;
 
 const isMobile = window.innerWidth < 768;
 
