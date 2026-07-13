@@ -72,6 +72,7 @@ const teamMembers = [
     },
 
     
+
     {
         name: "Osman Kemal HAZIR",
         role: "Design Team Leader",
@@ -92,6 +93,13 @@ const teamMembers = [
         role: "Designer",
         image: "assets/team/elifasyaakpinar.jpg"
     },
+    {
+        name: "Ada DURMAZ",
+        role: "Designer",
+        image: "assets/team/adadurmaz.jpg"
+    },
+
+
 
     {
         name: "Fatma Aysima ARISÖZ",
