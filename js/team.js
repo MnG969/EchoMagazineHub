@@ -13,7 +13,16 @@ const teamMembers = [
     },
 
     // Show More ile açılacak ekip
-
+    {
+        name: "Ada BÜYÜKALTAY",
+        role: "Writer",
+        image: "assets/team/adabuyukaltay.jpg"
+    },
+    {
+        name: "Ada ÇALIK",
+        role: "Writer",
+        image: "assets/team/adacalik.jpg"
+    },
     {
         name: "Aras Kaan KIRKPINAR",
         role: "Writer",
