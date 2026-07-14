@@ -24,9 +24,9 @@ const teamMembers = [
         image: "assets/team/adacalik.jpg"
     },
     {
-        name: "Aras Kaan KIRKPINAR",
+        name: "Aras Kağan KIRKPINAR",
         role: "Writer",
-        image: "assets/team/araskaan.jpg"
+        image: "assets/team/araskagan.jpg"
     },
     {
         name: "Bora KURTOĞLU",
@@ -67,6 +67,11 @@ const teamMembers = [
         name: "İpek ÖZTÜRK",
         role: "Writer",
         image: "assets/team/ipekoztürk.jpg"
+    },
+    {
+        name: "Utku Deniz ÖZHAN",
+        role: "Writer",
+        image: "assets/team/utkudeniz.jpg"
     },
     {
         name: "Bade KIZILGÜN",
