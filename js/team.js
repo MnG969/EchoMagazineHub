@@ -74,6 +74,16 @@ const teamMembers = [
         image: "assets/team/utkudeniz.jpg"
     },
     {
+        name: "Elvin Su YILDIZ",
+        role: "Writer",
+        image: "assets/team/elvinsuyildiz.jpg"
+    },
+    {
+        name: "Emine İrem EREN",
+        role: "Writer",
+        image: "assets/team/emineiremeren.jpg"
+    },
+    {
         name: "Bade KIZILGÜN",
         role: "Writer & PR Team Leader",
         image: "assets/team/bade.jpg"
