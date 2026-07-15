@@ -1128,7 +1128,7 @@ body.dark-mode .header.scrolled{
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
     gap:1.5rem;
 
@@ -1381,7 +1381,7 @@ body.dark-mode .header.scrolled{
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
     gap:2rem;
 
@@ -1400,7 +1400,9 @@ body.dark-mode .header.scrolled{
 
 .team__more.show{
 
-    max-height:5000px;
+    max-height:none;
+
+    overflow:visible;
 
     opacity:1;
 
