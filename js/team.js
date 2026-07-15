@@ -84,6 +84,36 @@ const teamMembers = [
         image: "assets/team/emineiremeren.jpg"
     },
     {
+        name: "Mira PARMAKSIZOĞLU",
+        role: "Writer",
+        image: "assets/team/miraparmaksizoglu.jpg"
+    },
+    {
+        name: "Emre İNAN",
+        role: "Writer",
+        image: "assets/team/emreinan.jpg"
+    },
+    {
+        name: "Emir İNAN",
+        role: "Writer",
+        image: "assets/team/emirinan.jpg"
+    },
+    {
+        name: "Arı YAŞAYAN",
+        role: "Writer",
+        image: "assets/team/ariyasayan.jpg"
+    },
+    {
+        name: "Arslan AYHAN",
+        role: "Writer",
+        image: "assets/team/arslanayhan.jpg"
+    },
+    {
+        name: "Elif BEŞÇINAR",
+        role: "Writer",
+        image: "assets/team/elifbescinar.jpg"
+    },
+    {
         name: "Bade KIZILGÜN",
         role: "Writer & PR Team Leader",
         image: "assets/team/bade.jpg"
