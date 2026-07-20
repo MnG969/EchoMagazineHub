@@ -701,6 +701,18 @@ if (featuredContainer && teamContainer && teamToggle) {
     });
 
 }
+
+fetch("https://echo-visitor-api.echomagazine.workers.dev/visit", {
+  method: "POST"
+})
+.then(res => res.json())
+.then(data => {
+  console.log("Visitor logged:", data);
+})
+.catch(err => {
+  console.error("Visitor error:", err);
+});
+
 /*==================================================
 =               END OF FILE
 ==================================================*/
