@@ -109,20 +109,18 @@ function prevPage() {
 =            ZOOM
 ==================================*/
 
+function updateZoom() {
+    book.style.zoom = zoom;
+}
+
 function zoomIn() {
-
-    zoom = Math.min(2, zoom + .1);
-
-    wrapper.style.transform = `scale(${zoom})`;
-
+    zoom = Math.min(2, zoom + 0.1);
+    updateZoom();
 }
 
 function zoomOut() {
-
-    zoom = Math.max(.6, zoom - .1);
-
-    wrapper.style.transform = `scale(${zoom})`;
-
+    zoom = Math.max(0.6, zoom - 0.1);
+    updateZoom();
 }
 
 /*==================================
