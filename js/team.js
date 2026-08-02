@@ -114,6 +114,11 @@ const teamMembers = [
         image: "assets/team/elifbescinar.jpg"
     },
     {
+        name: "Bade POLAT",
+        role: "Writer",
+        image: "assets/team/badepolat.jpg"
+    },
+    {
         name: "Bade KIZILGÜN",
         role: "Writer & PR Team Leader",
         image: "assets/team/bade.jpg"
