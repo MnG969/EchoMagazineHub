@@ -429,14 +429,21 @@ body {
 
     }
 
+    @media (max-width: 768px) {
+
+    /* ... mevcut kurallar ... */
+
     #book-wrapper {
-
-        padding-top: 165px;
-
-        padding-left: 15px;
-
-        padding-right: 15px;
-
+        padding-top: 170px;
+        padding-bottom: 100px;
+        padding-left: 16px;
+        padding-right: 16px;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch; /* mobil kaydırma akıcılığı */
+        align-items: flex-start;           /* önemli */
+        justify-content: center;
     }
+    
+}
 
 }
