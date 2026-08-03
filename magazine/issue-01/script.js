@@ -88,10 +88,6 @@ function updateZoom() {
 
     book.style.zoom = zoom;
 
-    /*
-     * Wait until the browser recalculates
-     * the zoomed dimensions.
-     */
     requestAnimationFrame(() => {
 
         const bookRect = book.getBoundingClientRect();
@@ -99,27 +95,14 @@ function updateZoom() {
         const wrapperWidth = wrapper.clientWidth;
         const wrapperHeight = wrapper.clientHeight;
 
-        /*
-         * Space needed so the zoomed book can be
-         * completely moved away from the fixed header.
-         */
         const headerSpace = isMobile ? 170 : 110;
 
-        /*
-         * Extra space created by zoom.
-         *
-         * This is what fixes the problem where the
-         * top of the magazine becomes unreachable.
-         */
         const extraVerticalSpace =
             Math.max(
                 0,
                 bookRect.height - wrapperHeight
             );
 
-        /*
-         * Extra horizontal space for zoomed pages.
-         */
         const extraHorizontalSpace =
             Math.max(
                 0,
@@ -127,11 +110,24 @@ function updateZoom() {
             );
 
         /*
-         * Add enough space before and after the book.
-         *
-         * The top padding is especially important because
-         * the header is fixed above the magazine.
+         * 1x'te dergiyi ortala.
+         * Zoom yapıldığında scroll alanının başlangıcını
+         * sola al ki derginin sol tarafına ulaşabilelim.
          */
+        if (zoom <= 1) {
+
+            wrapper.style.justifyContent = "center";
+
+        } else {
+
+            wrapper.style.justifyContent = "flex-start";
+
+        }
+
+        /*
+         * VERTICAL SCROLL
+         */
+
         const topPadding =
             headerSpace +
             Math.min(
@@ -142,14 +138,20 @@ function updateZoom() {
         const bottomPadding =
             isMobile ? 100 : 80;
 
+        /*
+         * HORIZONTAL SCROLL
+         */
+
         const horizontalPadding =
-            Math.max(
-                30,
-                Math.min(
-                    extraHorizontalSpace / 2,
-                    bookRect.width * 0.25
+            zoom > 1
+                ? Math.max(
+                    30,
+                    Math.min(
+                        extraHorizontalSpace / 2,
+                        bookRect.width * 0.25
+                    )
                 )
-            );
+                : 0;
 
         wrapper.style.paddingTop =
             `${topPadding}px`;

@@ -250,14 +250,11 @@ body {
 
     display: flex;
 
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
 
     padding-top: 90px;
     padding-bottom: 40px;
-
-    padding-left: 0;
-    padding-right: 0;
 
     overscroll-behavior: contain;
 }
@@ -270,8 +267,6 @@ body {
     display: flex;
 
     justify-content: center;
-
-    align-items: center;
 
     flex-shrink: 0;
 
