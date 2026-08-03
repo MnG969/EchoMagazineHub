@@ -249,12 +249,14 @@ body {
     overflow: auto;
 
     display: flex;
-
     justify-content: center;
     align-items: flex-start;
 
     padding-top: 90px;
     padding-bottom: 40px;
+
+    padding-left: 0;
+    padding-right: 0;
 
     overscroll-behavior: contain;
 }
@@ -265,11 +267,8 @@ body {
 
 #book {
     display: flex;
-
     justify-content: center;
-
     flex-shrink: 0;
-
     margin: 0;
 }
 

@@ -98,46 +98,35 @@ function updateZoom() {
         const headerSpace = isMobile ? 170 : 110;
 
         const extraVerticalSpace =
-            Math.max(0, bookRect.height - wrapperHeight);
+            Math.max(
+                0,
+                bookRect.height - wrapperHeight
+            );
 
         const extraHorizontalSpace =
-            Math.max(0, bookRect.width - wrapperWidth);
-
-        /*
-         * ==========================================
-         * VERTICAL
-         * ==========================================
-         */
+            Math.max(
+                0,
+                bookRect.width - wrapperWidth
+            );
 
         const topPadding =
             headerSpace +
             Math.min(
-                extraVerticalSpace / 2,
+                extraVerticalSpace,
                 bookRect.height * 0.5
             );
 
         const bottomPadding =
             isMobile ? 100 : 80;
 
-
-        /*
-         * ==========================================
-         * HORIZONTAL
-         * ==========================================
-         *
-         * IMPORTANT:
-         * At zoom > 1 we give the scroll area
-         * equal space on BOTH sides.
-         */
-
-        const sidePadding =
-            zoom > 1
-                ? Math.max(
-                    wrapperWidth / 2,
-                    extraHorizontalSpace / 2
+        const horizontalPadding =
+            Math.max(
+                30,
+                Math.min(
+                    extraHorizontalSpace / 2,
+                    bookRect.width * 0.25
                 )
-                : 0;
-
+            );
 
         wrapper.style.paddingTop =
             `${topPadding}px`;
@@ -146,10 +135,10 @@ function updateZoom() {
             `${bottomPadding}px`;
 
         wrapper.style.paddingLeft =
-            `${sidePadding}px`;
+            `${horizontalPadding}px`;
 
         wrapper.style.paddingRight =
-            `${sidePadding}px`;
+            `${horizontalPadding}px`;
 
     });
 
