@@ -243,38 +243,23 @@ body {
 ==================================*/
 
 #book-wrapper {
-
     width: 100%;
-
     height: 100vh;
 
     overflow: auto;
 
     display: flex;
 
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-    align-items: center;
+    padding-top: 90px;
+    padding-bottom: 40px;
 
-    padding-top: 110px;
+    padding-left: 0;
+    padding-right: 0;
 
-    padding-bottom: 80px;
-
-    padding-left: 30px;
-
-    padding-right: 30px;
-
-    /*
-     * Prevent the browser from trying to
-     * hide horizontal overflow during zoom.
-     */
     overscroll-behavior: contain;
-
-    /*
-     * Smooth touch scrolling on mobile.
-     */
-    -webkit-overflow-scrolling: touch;
-
 }
 
 /*==================================
@@ -282,7 +267,6 @@ body {
 ==================================*/
 
 #book {
-
     display: flex;
 
     justify-content: center;
@@ -291,11 +275,7 @@ body {
 
     flex-shrink: 0;
 
-    /*
-     * Important for zoomed dimensions.
-     */
-    margin: auto;
-
+    margin: 0;
 }
 
 /*==================================
