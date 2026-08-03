@@ -91,54 +91,38 @@ function updateZoom() {
     requestAnimationFrame(() => {
 
         const bookRect = book.getBoundingClientRect();
-
         const wrapperWidth = wrapper.clientWidth;
         const wrapperHeight = wrapper.clientHeight;
 
         const headerSpace = isMobile ? 170 : 110;
 
-        const extraVerticalSpace =
-            Math.max(
-                0,
-                bookRect.height - wrapperHeight
-            );
+        const extraVerticalSpace = Math.max(0, bookRect.height - wrapperHeight);
+        const extraHorizontalSpace = Math.max(0, bookRect.width - wrapperWidth);
 
-        const extraHorizontalSpace =
-            Math.max(
-                0,
-                bookRect.width - wrapperWidth
-            );
+        const topPadding = headerSpace + Math.min(extraVerticalSpace, bookRect.height * 0.5);
+        const bottomPadding = isMobile ? 100 : 80;
 
-        const topPadding =
-            headerSpace +
-            Math.min(
-                extraVerticalSpace,
-                bookRect.height * 0.5
-            );
+        // Zoom büyüdüğünde sola da kaydırılabilsin diye
+        if (zoom > 1) {
+            wrapper.style.justifyContent = "flex-start";
+            wrapper.style.alignItems = "flex-start";
 
-        const bottomPadding =
-            isMobile ? 100 : 80;
+            const horizontalPadding = Math.max(40, extraHorizontalSpace * 0.12);
 
-        const horizontalPadding =
-    Math.max(
-        30,
-        Math.min(
-            extraHorizontalSpace / 2,
-            bookRect.width * 0.25
-        )
-    );
+            wrapper.style.paddingLeft = `${horizontalPadding}px`;
+            wrapper.style.paddingRight = `${horizontalPadding}px`;
+        } else {
+            wrapper.style.justifyContent = "center";
+            wrapper.style.alignItems = "flex-start";
 
-        wrapper.style.paddingTop =
-            `${topPadding}px`;
+            const horizontalPadding = Math.max(30, Math.min(extraHorizontalSpace / 2, bookRect.width * 0.25));
 
-        wrapper.style.paddingBottom =
-            `${bottomPadding}px`;
+            wrapper.style.paddingLeft = `${horizontalPadding}px`;
+            wrapper.style.paddingRight = `${horizontalPadding}px`;
+        }
 
-        wrapper.style.paddingLeft =
-            `${horizontalPadding}px`;
-
-        wrapper.style.paddingRight =
-            `${horizontalPadding}px`;
+        wrapper.style.paddingTop = `${topPadding}px`;
+        wrapper.style.paddingBottom = `${bottomPadding}px`;
 
     });
 
