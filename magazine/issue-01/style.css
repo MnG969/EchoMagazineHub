@@ -443,7 +443,51 @@ body {
         align-items: flex-start;           /* önemli */
         justify-content: center;
     }
-    
+
 }
 
+}
+
+/* ================================
+   MOBILE SCROLLBAR GÖRÜNÜRLÜĞÜ
+================================ */
+
+#book-wrapper {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;                 /* Firefox */
+    scrollbar-color: rgba(0, 0, 0, 0.35) transparent;
+}
+
+/* Chrome, Safari, Edge (mobil dahil) */
+#book-wrapper::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    display: block !important;
+}
+
+#book-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#book-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.38);
+    border-radius: 10px;
+}
+
+#book-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Zoom açıkken scrollbar daha belirgin olsun */
+@media (max-width: 768px) {
+    #book-wrapper::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+    }
+}
+@media (max-width: 768px) {
+    #book-wrapper {
+        overflow: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
 }
