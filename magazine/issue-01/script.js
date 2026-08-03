@@ -120,9 +120,13 @@ function updateZoom() {
             isMobile ? 100 : 80;
 
         const horizontalPadding =
-    zoom > 1
-        ? wrapperWidth
-        : 0;
+    Math.max(
+        30,
+        Math.min(
+            extraHorizontalSpace / 2,
+            bookRect.width * 0.25
+        )
+    );
 
         wrapper.style.paddingTop =
             `${topPadding}px`;
