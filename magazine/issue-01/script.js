@@ -94,43 +94,36 @@ function updateZoom() {
         const wrapperWidth = wrapper.clientWidth;
         const wrapperHeight = wrapper.clientHeight;
 
-        // Mobile header daha yüksek
-        const headerSpace = isMobile ? 175 : 110;
-        const bottomSpace = isMobile ? 110 : 80;
+        const headerSpace = isMobile ? 180 : 110;
+        const bottomSpace = isMobile ? 120 : 80;
 
-        const extraVerticalSpace = Math.max(0, bookRect.height - wrapperHeight);
-        const extraHorizontalSpace = Math.max(0, bookRect.width - wrapperWidth);
+        const extraVertical = Math.max(0, bookRect.height - wrapperHeight + 40);
+        const extraHorizontal = Math.max(0, bookRect.width - wrapperWidth + 40);
 
-        const topPadding = headerSpace + Math.min(extraVerticalSpace * 0.4, bookRect.height * 0.35);
-        const bottomPadding = bottomSpace;
-
-        if (zoom > 1.02) {
-            // Zoom açıkken her yönde kaydırılabilsin
+        if (zoom > 1.05) {
+            // Zoom açıkken: her yöne kaydırılabilsin diye
             wrapper.style.justifyContent = "flex-start";
             wrapper.style.alignItems = "flex-start";
 
-            // Mobilde biraz daha fazla nefes payı
-            const horizontalPadding = isMobile
-                ? Math.max(24, extraHorizontalSpace * 0.18)
-                : Math.max(40, extraHorizontalSpace * 0.12);
+            // Mobilde bol padding veriyoruz ki scroll alanı oluşsun
+            const padX = isMobile ? Math.max(30, extraHorizontal * 0.25) : Math.max(40, extraHorizontal * 0.15);
+            const padY = isMobile ? Math.max(40, extraVertical * 0.25) : Math.max(30, extraVertical * 0.2);
 
-            wrapper.style.paddingLeft = `${horizontalPadding}px`;
-            wrapper.style.paddingRight = `${horizontalPadding}px`;
+            wrapper.style.paddingLeft = padX + "px";
+            wrapper.style.paddingRight = padX + "px";
+            wrapper.style.paddingTop = (headerSpace + padY) + "px";
+            wrapper.style.paddingBottom = (bottomSpace + padY) + "px";
+
         } else {
-            // Normal zoom → ortala
+            // Normal hali
             wrapper.style.justifyContent = "center";
             wrapper.style.alignItems = isMobile ? "center" : "flex-start";
 
-            const horizontalPadding = isMobile
-                ? Math.max(16, Math.min(extraHorizontalSpace / 2, 40))
-                : Math.max(30, Math.min(extraHorizontalSpace / 2, bookRect.width * 0.25));
-
-            wrapper.style.paddingLeft = `${horizontalPadding}px`;
-            wrapper.style.paddingRight = `${horizontalPadding}px`;
+            wrapper.style.paddingLeft = isMobile ? "16px" : "30px";
+            wrapper.style.paddingRight = isMobile ? "16px" : "30px";
+            wrapper.style.paddingTop = headerSpace + "px";
+            wrapper.style.paddingBottom = bottomSpace + "px";
         }
-
-        wrapper.style.paddingTop = `${topPadding}px`;
-        wrapper.style.paddingBottom = `${bottomPadding}px`;
 
     });
 

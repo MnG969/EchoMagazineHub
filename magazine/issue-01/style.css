@@ -448,9 +448,24 @@ body {
 
 }
 
+
+
 /* ================================
    MOBILE SCROLLBAR GÖRÜNÜRLÜĞÜ
 ================================ */
+
+@media (max-width: 768px) {
+    #book-wrapper {
+        overflow: scroll !important;
+        -webkit-overflow-scrolling: touch !important;
+        overscroll-behavior: contain;
+    }
+
+    #book {
+        flex-shrink: 0 !important;
+        min-width: max-content;
+    }
+}
 
 #book-wrapper {
     -webkit-overflow-scrolling: touch;
