@@ -98,60 +98,46 @@ function updateZoom() {
         const headerSpace = isMobile ? 170 : 110;
 
         const extraVerticalSpace =
-            Math.max(
-                0,
-                bookRect.height - wrapperHeight
-            );
+            Math.max(0, bookRect.height - wrapperHeight);
 
         const extraHorizontalSpace =
-            Math.max(
-                0,
-                bookRect.width - wrapperWidth
-            );
+            Math.max(0, bookRect.width - wrapperWidth);
 
         /*
-         * 1x'te dergiyi ortala.
-         * Zoom yapıldığında scroll alanının başlangıcını
-         * sola al ki derginin sol tarafına ulaşabilelim.
-         */
-        if (zoom <= 1) {
-
-            wrapper.style.justifyContent = "center";
-
-        } else {
-
-            wrapper.style.justifyContent = "flex-start";
-
-        }
-
-        /*
-         * VERTICAL SCROLL
+         * ==========================================
+         * VERTICAL
+         * ==========================================
          */
 
         const topPadding =
             headerSpace +
             Math.min(
-                extraVerticalSpace,
+                extraVerticalSpace / 2,
                 bookRect.height * 0.5
             );
 
         const bottomPadding =
             isMobile ? 100 : 80;
 
+
         /*
-         * HORIZONTAL SCROLL
+         * ==========================================
+         * HORIZONTAL
+         * ==========================================
+         *
+         * IMPORTANT:
+         * At zoom > 1 we give the scroll area
+         * equal space on BOTH sides.
          */
 
-        const horizontalPadding =
+        const sidePadding =
             zoom > 1
                 ? Math.max(
-                    30,
-                    Math.min(
-                        extraHorizontalSpace / 2,
-                        bookRect.width * 0.25
-                    )
+                    wrapperWidth / 2,
+                    extraHorizontalSpace / 2
                 )
                 : 0;
+
 
         wrapper.style.paddingTop =
             `${topPadding}px`;
@@ -160,10 +146,10 @@ function updateZoom() {
             `${bottomPadding}px`;
 
         wrapper.style.paddingLeft =
-            `${horizontalPadding}px`;
+            `${sidePadding}px`;
 
         wrapper.style.paddingRight =
-            `${horizontalPadding}px`;
+            `${sidePadding}px`;
 
     });
 
