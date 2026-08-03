@@ -97,17 +97,16 @@ function updateZoom() {
         const headerSpace = isMobile ? 180 : 110;
         const bottomSpace = isMobile ? 120 : 80;
 
-        const extraVertical = Math.max(0, bookRect.height - wrapperHeight + 40);
-        const extraHorizontal = Math.max(0, bookRect.width - wrapperWidth + 40);
-
         if (zoom > 1.05) {
-            // Zoom açıkken: her yöne kaydırılabilsin diye
+            // Zoom açıkken → PageFlip'in dokunma olaylarını kapat
+            // böylece parmakla kaydırma çalışır
+            book.style.pointerEvents = "none";
+
             wrapper.style.justifyContent = "flex-start";
             wrapper.style.alignItems = "flex-start";
 
-            // Mobilde bol padding veriyoruz ki scroll alanı oluşsun
-            const padX = isMobile ? Math.max(30, extraHorizontal * 0.25) : Math.max(40, extraHorizontal * 0.15);
-            const padY = isMobile ? Math.max(40, extraVertical * 0.25) : Math.max(30, extraVertical * 0.2);
+            const padX = isMobile ? 40 : 50;
+            const padY = isMobile ? 50 : 40;
 
             wrapper.style.paddingLeft = padX + "px";
             wrapper.style.paddingRight = padX + "px";
@@ -115,7 +114,9 @@ function updateZoom() {
             wrapper.style.paddingBottom = (bottomSpace + padY) + "px";
 
         } else {
-            // Normal hali
+            // Zoom kapalı → normal sayfa çevirme aktif
+            book.style.pointerEvents = "auto";
+
             wrapper.style.justifyContent = "center";
             wrapper.style.alignItems = isMobile ? "center" : "flex-start";
 
