@@ -243,14 +243,12 @@ body {
 ==================================*/
 
 #book-wrapper {
-
     width: 100%;
     height: 100vh;
 
     overflow: auto;
 
     display: flex;
-
     justify-content: center;
     align-items: flex-start;
 
@@ -261,38 +259,17 @@ body {
     padding-right: 0;
 
     overscroll-behavior: contain;
-
-    /*
-     * Important for transformed content:
-     * allow the scroll area to contain the
-     * entire enlarged magazine.
-     */
-    position: relative;
-
 }
-
 
 /*==================================
 =               BOOK
 ==================================*/
 
 #book {
-
     display: flex;
-
     justify-content: center;
-
     flex-shrink: 0;
-
     margin: 0;
-
-    /*
-     * Transform does not change normal layout
-     * dimensions, so JS creates the required
-     * scroll space around it.
-     */
-    transform-origin: center center;
-
 }
 
 /*==================================
@@ -383,20 +360,28 @@ body {
 
     #book-wrapper {
 
-    padding-top: 170px;
+        /*
+         * Mobile header is taller,
+         * so give the book more starting space.
+         */
+        padding-top: 170px;
 
-    padding-bottom: 100px;
+        padding-bottom: 100px;
 
-    padding-left: 0;
-    padding-right: 0;
+        padding-left: 20px;
 
-    overflow: auto;
+        padding-right: 20px;
 
-    align-items: flex-start;
+        /*
+         * Keep both scroll directions available.
+         */
+        overflow: auto;
 
-    justify-content: center;
+        align-items: center;
 
-}
+        justify-content: center;
+
+    }
 
     #book {
 

@@ -23,6 +23,7 @@ for (let i = 2; i <= TOTAL_PAGES; i++) {
     div.innerHTML = `<img src="./pages/${i}.jpg">`;
 
     book.appendChild(div);
+
 }
 
 /*==================================
@@ -72,6 +73,7 @@ const pageFlip = new St.PageFlip(book, {
     maxShadowOpacity: 0.65,
 
     drawShadow: true
+
 });
 
 pageFlip.loadFromHTML(
@@ -84,67 +86,62 @@ pageFlip.loadFromHTML(
 
 function updateZoom() {
 
-    /*
-     * Instead of CSS zoom, use transform.
-     * The spacer dimensions below make the
-     * transformed book fully scrollable.
-     */
-
-    book.style.transform = `scale(${zoom})`;
-    book.style.transformOrigin = "center center";
+    book.style.zoom = zoom;
 
     requestAnimationFrame(() => {
 
-        const baseWidth = book.offsetWidth;
-        const baseHeight = book.offsetHeight;
-
-        const scaledWidth = baseWidth * zoom;
-        const scaledHeight = baseHeight * zoom;
+        const bookRect = book.getBoundingClientRect();
 
         const wrapperWidth = wrapper.clientWidth;
         const wrapperHeight = wrapper.clientHeight;
 
         const headerSpace = isMobile ? 170 : 110;
 
-        /*
-         * Amount of extra space created by zoom.
-         */
-        const horizontalOverflow = Math.max(
-            0,
-            scaledWidth - wrapperWidth
-        );
+        const extraVerticalSpace =
+            Math.max(
+                0,
+                bookRect.height - wrapperHeight
+            );
 
-        const verticalOverflow = Math.max(
-            0,
-            scaledHeight - (wrapperHeight - headerSpace)
-        );
+        const extraHorizontalSpace =
+            Math.max(
+                0,
+                bookRect.width - wrapperWidth
+            );
 
-        /*
-         * The invisible space around the book
-         * guarantees that BOTH sides can be reached.
-         */
-        const horizontalSpace =
-            Math.ceil(horizontalOverflow / 2);
+        const topPadding =
+            headerSpace +
+            Math.min(
+                extraVerticalSpace,
+                bookRect.height * 0.5
+            );
 
-        const verticalSpace =
-            Math.ceil(verticalOverflow / 2);
+        const bottomPadding =
+            isMobile ? 100 : 80;
+
+        const horizontalPadding =
+    Math.max(
+        30,
+        Math.min(
+            extraHorizontalSpace / 2,
+            bookRect.width * 0.25
+        )
+    );
 
         wrapper.style.paddingTop =
-            `${headerSpace + verticalSpace}px`;
+            `${topPadding}px`;
 
         wrapper.style.paddingBottom =
-            `${Math.max(
-                isMobile ? 100 : 80,
-                verticalSpace + 40
-            )}px`;
+            `${bottomPadding}px`;
 
         wrapper.style.paddingLeft =
-            `${horizontalSpace}px`;
+            `${horizontalPadding}px`;
 
         wrapper.style.paddingRight =
-            `${horizontalSpace}px`;
+            `${horizontalPadding}px`;
 
     });
+
 }
 
 /*==================================
@@ -227,21 +224,31 @@ document.addEventListener("keydown", (e) => {
     switch (e.key) {
 
         case "ArrowRight":
+
             pageFlip.flipNext();
+
             break;
 
         case "ArrowLeft":
+
             pageFlip.flipPrev();
+
             break;
 
         case "+":
+
         case "=":
+
             zoomIn();
+
             break;
 
         case "-":
+
             zoomOut();
+
             break;
+
     }
 
 });
