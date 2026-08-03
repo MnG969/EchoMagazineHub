@@ -243,8 +243,15 @@ document.addEventListener("keydown", (e) => {
 =      RESPONSIVE UPDATE
 ==================================*/
 
+// Mobilde resize ile reload yapma (kaydırmayı bozuyor)
+let resizeTimer;
 window.addEventListener("resize", () => {
-
-    location.reload();
-
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        // Sadece gerçekten ekran boyutu değiştiyse reload et
+        if (Math.abs(window.innerWidth - (window.lastWidth || 0)) > 50) {
+            location.reload();
+        }
+        window.lastWidth = window.innerWidth;
+    }, 300);
 });
