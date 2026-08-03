@@ -136,10 +136,6 @@ function updateZoom() {
         wrapper.style.paddingRight =
             `${horizontalPadding}px`;
 
-        if (zoom > 1) {
-    wrapper.scrollLeft = 0;
-}
-
     });
 
 }
