@@ -94,28 +94,36 @@ function updateZoom() {
         const wrapperWidth = wrapper.clientWidth;
         const wrapperHeight = wrapper.clientHeight;
 
-        const headerSpace = isMobile ? 170 : 110;
+        // Mobile header daha yüksek
+        const headerSpace = isMobile ? 175 : 110;
+        const bottomSpace = isMobile ? 110 : 80;
 
         const extraVerticalSpace = Math.max(0, bookRect.height - wrapperHeight);
         const extraHorizontalSpace = Math.max(0, bookRect.width - wrapperWidth);
 
-        const topPadding = headerSpace + Math.min(extraVerticalSpace, bookRect.height * 0.5);
-        const bottomPadding = isMobile ? 100 : 80;
+        const topPadding = headerSpace + Math.min(extraVerticalSpace * 0.4, bookRect.height * 0.35);
+        const bottomPadding = bottomSpace;
 
-        // Zoom büyüdüğünde sola da kaydırılabilsin diye
-        if (zoom > 1) {
+        if (zoom > 1.02) {
+            // Zoom açıkken her yönde kaydırılabilsin
             wrapper.style.justifyContent = "flex-start";
             wrapper.style.alignItems = "flex-start";
 
-            const horizontalPadding = Math.max(40, extraHorizontalSpace * 0.12);
+            // Mobilde biraz daha fazla nefes payı
+            const horizontalPadding = isMobile
+                ? Math.max(24, extraHorizontalSpace * 0.18)
+                : Math.max(40, extraHorizontalSpace * 0.12);
 
             wrapper.style.paddingLeft = `${horizontalPadding}px`;
             wrapper.style.paddingRight = `${horizontalPadding}px`;
         } else {
+            // Normal zoom → ortala
             wrapper.style.justifyContent = "center";
-            wrapper.style.alignItems = "flex-start";
+            wrapper.style.alignItems = isMobile ? "center" : "flex-start";
 
-            const horizontalPadding = Math.max(30, Math.min(extraHorizontalSpace / 2, bookRect.width * 0.25));
+            const horizontalPadding = isMobile
+                ? Math.max(16, Math.min(extraHorizontalSpace / 2, 40))
+                : Math.max(30, Math.min(extraHorizontalSpace / 2, bookRect.width * 0.25));
 
             wrapper.style.paddingLeft = `${horizontalPadding}px`;
             wrapper.style.paddingRight = `${horizontalPadding}px`;
