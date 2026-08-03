@@ -1,16 +1,16 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-:root{
+:root {
 
-    --bg:#F8F3E6;
-    --surface:rgba(255,255,255,.72);
-    --gold:#C9A96E;
-    --text:#1F1F1F;
-    --shadow:0 15px 40px rgba(0,0,0,.08);
+    --bg: #F8F3E6;
+    --surface: rgba(255, 255, 255, .72);
+    --gold: #C9A96E;
+    --text: #1F1F1F;
+    --shadow: 0 15px 40px rgba(0, 0, 0, .08);
 
 }
 
@@ -32,39 +32,39 @@ body {
 =            TOP BAR
 ==================================*/
 
-.top-bar{
+.top-bar {
 
-    position:fixed;
+    position: fixed;
 
-    top:18px;
+    top: 18px;
 
-    left:50%;
+    left: 50%;
 
-    transform:translateX(-50%);
+    transform: translateX(-50%);
 
-    width:min(95%,1250px);
+    width: min(95%, 1250px);
 
-    height:78px;
+    height: 78px;
 
-    padding:0 28px;
+    padding: 0 28px;
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    justify-content:space-between;
+    justify-content: space-between;
 
-    background:var(--surface);
+    background: var(--surface);
 
-    backdrop-filter:blur(18px);
+    backdrop-filter: blur(18px);
 
-    border:1px solid rgba(255,255,255,.4);
+    border: 1px solid rgba(255, 255, 255, .4);
 
-    border-radius:22px;
+    border-radius: 22px;
 
-    box-shadow:var(--shadow);
+    box-shadow: var(--shadow);
 
-    z-index:9999;
+    z-index: 9999;
 
 }
 
@@ -72,35 +72,35 @@ body {
 =           BACK BUTTON
 ==================================*/
 
-.back-btn{
+.back-btn {
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    gap:.7rem;
+    gap: .7rem;
 
-    text-decoration:none;
+    text-decoration: none;
 
-    color:var(--text);
+    color: var(--text);
 
-    font-weight:600;
+    font-weight: 600;
 
-    transition:.35s;
-
-}
-
-.back-btn i{
-
-    font-size:1.25rem;
+    transition: .35s;
 
 }
 
-.back-btn:hover{
+.back-btn i {
 
-    color:var(--gold);
+    font-size: 1.25rem;
 
-    transform:translateX(-4px);
+}
+
+.back-btn:hover {
+
+    color: var(--gold);
+
+    transform: translateX(-4px);
 
 }
 
@@ -108,37 +108,37 @@ body {
 =             BRAND
 ==================================*/
 
-.brand{
+.brand {
 
-    text-align:center;
-
-}
-
-.brand h1{
-
-    font-family:Georgia,serif;
-
-    font-size:1.45rem;
-
-    font-weight:600;
-
-    letter-spacing:.03em;
+    text-align: center;
 
 }
 
-.brand span{
+.brand h1 {
 
-    display:block;
+    font-family: Georgia, serif;
 
-    margin-top:2px;
+    font-size: 1.45rem;
 
-    font-size:.82rem;
+    font-weight: 600;
 
-    letter-spacing:.16em;
+    letter-spacing: .03em;
 
-    color:#777;
+}
 
-    text-transform:uppercase;
+.brand span {
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: .82rem;
+
+    letter-spacing: .16em;
+
+    color: #777;
+
+    text-transform: uppercase;
 
 }
 
@@ -146,122 +146,106 @@ body {
 =            TOOLS
 ==================================*/
 
-.reader-tools{
+.reader-tools {
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
 
-    gap:12px;
-
-}
-.nav-btn{
-
-    border:none;
-
-    background:white;
-
-    height:42px;
-
-    padding:0 18px;
-
-    border-radius:999px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-    white-space:nowrap;
+    gap: 12px;
 
 }
 
-.nav-btn:hover{
+.nav-btn {
 
-    transform:translateY(-2px);
+    border: none;
 
-    color:var(--gold);
+    background: white;
 
-}
+    height: 42px;
 
-#page-number{
+    padding: 0 18px;
 
-    width:70px;
+    border-radius: 999px;
 
-    text-align:center;
+    font-weight: 600;
 
-    font-weight:600;
+    cursor: pointer;
 
-    color:#666;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
 
-}
+    transition: .3s;
 
-.reader-tools button{
+    white-space: nowrap;
 
-    width:42px;
+    width: auto !important;
 
-    height:42px;
+    min-width: 110px;
 
-    border:none;
+    display: flex;
 
-    border-radius:50%;
+    align-items: center;
 
-    background:white;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-    cursor:pointer;
-
-    transition:.35s;
+    justify-content: center;
 
 }
 
-.nav-btn{
+.nav-btn:hover {
 
-    width:auto !important;
+    transform: translateY(-2px);
 
-    min-width:110px;
-
-    height:42px;
-
-    padding:0 18px;
-
-    border-radius:999px !important;
-
-    background:white;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-    font-weight:600;
-
-    white-space:nowrap;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
+    color: var(--gold);
 
 }
 
-.reader-tools button:hover{
+#page-number {
 
-    transform:translateY(-2px);
+    width: 70px;
 
-    color:var(--gold);
+    text-align: center;
+
+    font-weight: 600;
+
+    color: #666;
+
+}
+
+.reader-tools button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+
+    cursor: pointer;
+
+    transition: .35s;
+
+}
+
+.reader-tools button:hover {
+
+    transform: translateY(-2px);
+
+    color: var(--gold);
 
 }
 
 /*==================================
-=             BOOK
+=             BOOK WRAPPER
 ==================================*/
 
 #book-wrapper {
 
     width: 100%;
+
     height: 100vh;
 
     overflow: auto;
@@ -269,90 +253,215 @@ body {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
-    padding-top: 90px;
-    padding-bottom: 40px;
+    padding-top: 110px;
 
-}
+    padding-bottom: 80px;
 
-#book {
-    display: flex;
-    justify-content: center;
-    flex-shrink: 0;
-}
+    padding-left: 30px;
 
-.page{
+    padding-right: 30px;
 
-    overflow:hidden;
+    /*
+     * Prevent the browser from trying to
+     * hide horizontal overflow during zoom.
+     */
+    overscroll-behavior: contain;
 
-    background:white;
-
-}
-
-.page img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
+    /*
+     * Smooth touch scrolling on mobile.
+     */
+    -webkit-overflow-scrolling: touch;
 
 }
 
 /*==================================
-=           MOBILE
+=               BOOK
 ==================================*/
 
-@media(max-width:768px){
+#book {
 
-    .top-bar{
+    display: flex;
 
-        height:auto;
+    justify-content: center;
 
-        padding:18px;
+    align-items: center;
 
-        gap:16px;
+    flex-shrink: 0;
 
-        flex-direction:column;
+    /*
+     * Important for zoomed dimensions.
+     */
+    margin: auto;
+
+}
+
+/*==================================
+=               PAGE
+==================================*/
+
+.page {
+
+    overflow: hidden;
+
+    background: white;
+
+}
+
+.page img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+/*==================================
+=             MOBILE
+==================================*/
+
+@media (max-width: 768px) {
+
+    .top-bar {
+
+        height: auto;
+
+        padding: 18px;
+
+        gap: 16px;
+
+        flex-direction: column;
+
+        width: calc(100% - 24px);
+
+        top: 12px;
 
     }
 
-    .brand h1{
+    .brand h1 {
 
-        font-size:1.15rem;
-
-    }
-
-    .reader-tools{
-
-        flex-wrap:wrap;
-
-        justify-content:center;
-
-        gap:10px;
+        font-size: 1.15rem;
 
     }
 
-    .nav-btn{
+    .reader-tools {
 
-        padding:0 14px;
+        width: 100%;
 
-        font-size:.85rem;
+        flex-wrap: wrap;
 
-    }
+        justify-content: center;
 
-    .back-btn{
-
-        align-self:flex-start;
+        gap: 10px;
 
     }
 
-    #book-wrapper{
+    .nav-btn {
 
-        padding-top:150px;
+        padding: 0 14px;
+
+        font-size: .85rem;
+
+        min-width: 100px;
+
+    }
+
+    .back-btn {
+
+        align-self: flex-start;
+
+    }
+
+    #page-number {
+
+        width: 60px;
+
+    }
+
+    #book-wrapper {
+
+        /*
+         * Mobile header is taller,
+         * so give the book more starting space.
+         */
+        padding-top: 170px;
+
+        padding-bottom: 100px;
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+
+        /*
+         * Keep both scroll directions available.
+         */
+        overflow: auto;
+
+        align-items: center;
+
+        justify-content: center;
+
+    }
+
+    #book {
+
+        flex-shrink: 0;
+
+    }
+
+}
+
+/*==================================
+=       SMALL MOBILE DEVICES
+==================================*/
+
+@media (max-width: 480px) {
+
+    .top-bar {
+
+        padding: 14px;
+
+        gap: 12px;
+
+    }
+
+    .reader-tools {
+
+        gap: 7px;
+
+    }
+
+    .nav-btn {
+
+        min-width: 90px;
+
+        height: 38px;
+
+        font-size: .78rem;
+
+    }
+
+    .reader-tools button {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+    #book-wrapper {
+
+        padding-top: 165px;
+
+        padding-left: 15px;
+
+        padding-right: 15px;
 
     }
 
