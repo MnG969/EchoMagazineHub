@@ -157,6 +157,11 @@ const teamMembers = [
         role: "Designer",
         image: "assets/team/adadurmaz.jpg"
     },
+    {
+        name: "Sudenaz Saraçoğlu",
+        role: "Designer",
+        image: "assets/team/sudenazsaracoglu.jpg"
+    },
 
 
 
