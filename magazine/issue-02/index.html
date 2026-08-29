@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Echo Magazine | Issue 02</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css">
+    <!-- Clarity tracking code for https://www.echomagazine.com.tr/ -->
+    <script>
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xl70lubgc8");
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MDH2NEV0RK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MDH2NEV0RK');
+</script>
+
+<link rel="canonical" href="https://www.echomagazine.com.tr/magazine/issue-02/">
+
+</head>
+
+<body>
+
+    <header class="top-bar">
+
+        <a href="../../index.html" class="back-btn">
+
+            <i class="ri-arrow-left-line"></i>
+
+            <span>Back to Hub</span>
+
+        </a>
+
+        <div class="brand">
+
+            <h1>Echo Magazine</h1>
+
+            <span>Issue 02</span>
+
+        </div>
+
+        <div class="reader-tools">
+
+    <button id="prev-page" class="nav-btn" onclick="prevPage()">
+        ← PREV
+    </button>
+
+    <span id="page-number">
+        1 / 95
+    </span>
+
+    <button id="next-page" class="nav-btn" onclick="nextPage()">
+        NEXT →
+    </button>
+
+    <button onclick="zoomOut()">
+        <i class="ri-subtract-line"></i>
+    </button>
+
+    <button onclick="zoomIn()">
+        <i class="ri-add-line"></i>
+    </button>
+
+</div>
+
+    </header>
+
+    <div id="book-wrapper">
+
+        <div id="book">
+
+            <div class="page" data-density="hard">
+
+                <img src="./pages/1.jpg">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
