@@ -31,7 +31,7 @@ const teamMembers = [
     {
         name: "Bora KURTOĞLU",
         role: "Writer",
-        image: "assets/team/bora.jpg"
+        image: "assets/team/borakurtoglu.jpg"
     },
     {
         name: "Dağhan Umut BENİCE",
@@ -119,6 +119,16 @@ const teamMembers = [
         image: "assets/team/badepolat.jpg"
     },
     {
+        name: "Nilüfer ÇELİK",
+        role: "Writer",
+        image: "assets/team/nilüfercelik.jpg"
+    },
+    {
+        name: "Güney ÜNAL",
+        role: "Writer",
+        image: "assets/team/güneyunal.jpg"
+    },
+    {
         name: "Bade KIZILGÜN",
         role: "Writer & PR Team Leader",
         image: "assets/team/bade.jpg"
@@ -161,6 +171,11 @@ const teamMembers = [
         name: "Sudenaz Saraçoğlu",
         role: "Designer",
         image: "assets/team/sudenazsaracoglu.jpg"
+    },
+    {
+        name: "İpek BERKE",
+        role: "Designer",
+        image: "assets/team/ipekberke.jpg"
     },
 
 
