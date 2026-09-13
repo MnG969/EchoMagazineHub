@@ -129,6 +129,11 @@ const teamMembers = [
         image: "assets/team/güneyunal.jpg"
     },
     {
+        name: "Öykü ARSLAN",
+        role: "Writer",
+        image: "assets/team/oykuarslan.jpg"
+    },
+    {
         name: "Bade KIZILGÜN",
         role: "Writer & PR Team Leader",
         image: "assets/team/bade.jpg"
