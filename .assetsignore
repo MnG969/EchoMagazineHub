@@ -1,0 +1,25 @@
+# Kaynak klasörü (assets.directory = ".") doğrudan yayınlandığı için
+# yayınlanmaması gereken dosyalar burada listelenir. (.gitignore sözdizimi)
+
+# --- SEO denetim raporları (yayınlanmamalı) ---
+seo-audit
+
+# --- Yapılandırma ve proje dosyaları ---
+wrangler.jsonc
+wrangler.toml
+README.md
+package.json
+package-lock.json
+node_modules
+
+# --- IDE / editör durum dosyaları ---
+.vs
+**/.vs
+**/.vscode
+**/*.sqlite
+**/*.wsuo
+**/*.suo
+**/*.user
+
+# --- Dağınık metin dosyaları ---
+*Yeni Metin*.txt
