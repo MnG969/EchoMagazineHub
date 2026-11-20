@@ -44,19 +44,9 @@ const teamMembers = [
         image: "assets/team/dorukaras.jpg"
     },
     {
-        name: "Nehir Neva KARAARSLAN",
-        role: "Writer & PR Member",
-        image: "assets/team/nehirneva.jpg"
-    },
-    {
         name: "Nil KÖMÜRCÜOĞLU",
         role: "Writer",
         image: "assets/team/nil.jpg"
-    },
-    {
-        name: "Nisa ZEYNEPLİ",
-        role: "Writer & PR Member",
-        image: "assets/team/nisa.jpg"
     },
     {
         name: "Habib BAKTIR",
@@ -134,19 +124,53 @@ const teamMembers = [
         image: "assets/team/oykuarslan.jpg"
     },
     {
+        name: "İdil OVAYOLU",
+        role: "Writer",
+        image: "assets/team/idilovayolu.jpg"
+    },
+    {
+        name: "Esen ERKEN",
+        role: "Writer",
+        image: "assets/team/esenerken.jpg"
+    },
+    {
+        name: "İpek BERKE",
+        role: "Writer & Designer",
+        image: "assets/team/ipekberke.jpg"
+    },
+    {
+        name: "Nehir Neva KARAARSLAN",
+        role: "Writer & PR Member",
+        image: "assets/team/nehirneva.jpg"
+    },
+    {
+        name: "Aliyesu ÜRKEN",
+        role: "Writer & PR Member",
+        image: "assets/team/aliyesuurken.jpg"
+    },
+    {
         name: "Bade KIZILGÜN",
         role: "Writer & PR Team Leader",
         image: "assets/team/bade.jpg"
     },
-
     {
         name: "İpek ÖZBUDAK",
         role: "Writer & Designer & PR Member & Media Manager",
         image: "assets/team/ipekozbudak.jpg"
     },
+    {
+        name: "Nisa ZEYNEPLİ",
+        role: "Writer & Designer & PR Member & Content Creator",
+        image: "assets/team/nisa.jpg"
+    },
 
     
 
+    {
+        name: "Damla ERAY",
+        role: "Design Team Leader",
+        image: "assets/team/damlaeray.jpg"
+    },
     {
         name: "Osman Kemal HAZIR",
         role: "Design Team Leader",
@@ -177,12 +201,6 @@ const teamMembers = [
         role: "Designer",
         image: "assets/team/sudenazsaracoglu.jpg"
     },
-    {
-        name: "İpek BERKE",
-        role: "Designer",
-        image: "assets/team/ipekberke.jpg"
-    },
-
 
 
     {
@@ -199,11 +217,6 @@ const teamMembers = [
         name: "Talya ADALI",
         role: "PR Member",
         image: "assets/team/talyaadali.jpg"
-    },
-    {
-        name: "Aliyesu ÜRKEN",
-        role: "PR Member",
-        image: "assets/team/aliyesuurken.jpg"
     },
     {
         name: "Deniz Çınar ÖZER",
